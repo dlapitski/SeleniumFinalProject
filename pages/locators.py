@@ -16,3 +16,5 @@ class ProductPageLocators():
     ACTUAL_ITEM_PRICE = (By.CSS_SELECTOR, '.product_main .price_color')
     ADDED_ITEM_NAME = (By.CSS_SELECTOR, '#messages .alert:first-child .alertinner strong')
     ADDED_ITEM_PRICE = (By.CSS_SELECTOR, '#messages .alert:nth-child(3) .alertinner strong')
+    SUCCESS_MESSAGE1 = (By.CSS_SELECTOR, '#messages .alert-success:nth-child(1)')
+    SUCCESS_MESSAGE2 = (By.CSS_SELECTOR, '#messages .alert-success:nth-child(2)')
