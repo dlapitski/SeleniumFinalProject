@@ -69,7 +69,7 @@ def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     basket_page.should_be_no_items_in_basket()
 
 
-@pytest.mark.logged_in_user_actions
+@pytest.mark.logged_in_user
 class TestUserAddToBasketFromProductPage():
 
     @pytest.fixture(scope='function', autouse=True)
