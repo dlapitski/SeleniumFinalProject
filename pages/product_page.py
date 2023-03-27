@@ -25,9 +25,11 @@ class ProductPage(BasePage):
         button.click()
 
     def should_be_added_to_basket(self):
-        item_name = self.browser.find_element(*ProductPageLocators.ADDED_ITEM_NAME).text
-        assert item_name == "The shellcoder's handbook", 'Book name is different'
+        actual_item_name = self.browser.find_element(*ProductPageLocators.ACTUAL_ITEM_NAME).text
+        expected_item_name = self.browser.find_element(*ProductPageLocators.ADDED_ITEM_NAME).text
+        assert expected_item_name == actual_item_name, 'Book name is different'
 
     def should_be_correct_price_in_basket(self):
-        item_price = self.browser.find_element(*ProductPageLocators.ADDED_ITEM_PRICE).text
-        assert item_price == '£9.99', 'Book price is different'
+        actual_item_price = self.browser.find_element(*ProductPageLocators.ACTUAL_ITEM_PRICE).text
+        expected_item_price = self.browser.find_element(*ProductPageLocators.ADDED_ITEM_PRICE).text
+        assert expected_item_price == actual_item_price, 'Book price is different'
