@@ -1,10 +1,12 @@
 from .base_page import BasePage
+from .locators import MainPageLocators
 
 
 class MainPage(BasePage):
-    pass
 
-# Optionally, this could be left instead of the 'pass' keyword
-# class MainPage(BasePage):
-#     def __init__(self, *args, **kwargs):
-#         super(MainPage, self).__init__(*args, **kwargs)
+    def should_be_login_link(self):
+        assert self.is_element_present(*MainPageLocators.LOGIN_LINK), 'Login link is NOT presented'
+
+    def go_to_login_page(self):
+        link = self.browser.find_element(*MainPageLocators.LOGIN_LINK)
+        link.click()
