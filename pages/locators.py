@@ -23,3 +23,8 @@ class ProductPageLocators():
     ADDED_ITEM_PRICE = (By.CSS_SELECTOR, '#messages .alert:nth-child(3) .alertinner strong')
     SUCCESS_MESSAGE1 = (By.CSS_SELECTOR, '#messages .alert-success:nth-child(1)')
     SUCCESS_MESSAGE2 = (By.CSS_SELECTOR, '#messages .alert-success:nth-child(2)')
+
+class BasketPageLocators():
+    VIEW_BASKET_BUTTON = (By.CSS_SELECTOR, '.basket-mini .btn-group > [href*="basket"]')
+    ITEMS_SECTION_IN_BASKET = (By.CSS_SELECTOR, '.basket_summary')
+    EMPTY_BASKET_TEXT = (By.CSS_SELECTOR, '#content_inner p')
