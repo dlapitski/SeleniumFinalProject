@@ -24,12 +24,14 @@ class ProductPage(BasePage):
         button = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON)
         button.click()
 
-    def should_be_added_to_basket(self):
+    def should_be_added_to_basket(self, timeout=5):
+        self.browser.implicitly_wait(timeout)
         actual_item_name = self.browser.find_element(*ProductPageLocators.ACTUAL_ITEM_NAME).text
         expected_item_name = self.browser.find_element(*ProductPageLocators.ADDED_ITEM_NAME).text
         assert expected_item_name == actual_item_name, 'Book name is different'
 
-    def should_be_correct_price_in_basket(self):
+    def should_be_correct_price_in_basket(self, timeout=5):
+        self.browser.implicitly_wait(timeout)
         actual_item_price = self.browser.find_element(*ProductPageLocators.ACTUAL_ITEM_PRICE).text
         expected_item_price = self.browser.find_element(*ProductPageLocators.ADDED_ITEM_PRICE).text
         assert expected_item_price == actual_item_price, 'Book price is different'
